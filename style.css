@@ -1,0 +1,144 @@
+* {
+    padding: 0;
+    margin: 0;
+     box-sizing: border-box;
+    font-family: 'Mali', cursive;
+    background-color: black;
+    color: #ffffff;
+   
+}
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: rgba(18, 18, 18, 0.7); /* fond légèrement transparent */
+    backdrop-filter: blur(10px); /* flou derrière le header */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    height: 60px;
+    color: #ffffff;
+}
+
+header .titre {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+nav  {
+   cursor: pointer;
+   display: flex;
+   gap: 20px;
+
+}
+
+main {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     margin: 100px auto 0 auto; /* centrage horizontal */
+     width: 500px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+main .barre{
+    display: flex;
+    gap: 30px;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 15px 15px;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    justify-content: space-around;
+}
+
+.barre p{
+    color: #b7b7b7;
+}
+
+.timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 100px;
+    font-weight: bold;
+}
+
+.pr {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.btw-de {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    padding: 15px;
+
+}
+
+.white button {
+    border: none;
+    background-color: #ffffff;
+    opacity: 90%;
+    color: black;
+    height: 50px;
+    width: 470px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.black button {
+    border: none;
+    border-style: dashed;
+    color: #b7b7b7;
+    height: 50px;
+    width: 470px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+#clr {
+    color: #ffffff;
+}
+
+.track {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    align-items: center;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.1) ;
+    width: 500px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 50px;
+    text-transform: uppercase;  
+}
+
+footer{
+    
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #b7b7b7;
+    border-top: 1px solid rgba(255,255,255,0.1) ;
+    margin-top: 50px;
+}
