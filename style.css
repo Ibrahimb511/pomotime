@@ -1,85 +1,100 @@
+/* ---------------------- */
+/* Base et global styles  */
+/* ---------------------- */
 * {
     padding: 0;
     margin: 0;
-     box-sizing: border-box;
+    box-sizing: border-box;
     font-family: 'Mali', cursive;
     background-color: black;
     color: #ffffff;
-   
 }
+
+/* ---------------------- */
+/* Header                 */
+/* ---------------------- */
 header {
     position: fixed;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     z-index: 1000;
     top: 0;
     left: 0;
-    background-color: rgba(18, 18, 18, 0.7); /* fond légèrement transparent */
-    backdrop-filter: blur(10px); /* flou derrière le header */
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    background-color: rgba(18, 18, 18, 0.7);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255,255,255,0.1);
     height: 60px;
-    color: #ffffff;
+    padding: 0 5%;
 }
 
 header .titre {
     font-weight: bold;
-    font-size: 30px;
+    font-size: clamp(20px, 4vw, 30px);
 }
 
-nav  {
+nav {
    cursor: pointer;
    display: flex;
    gap: 20px;
-
+   flex-wrap: wrap;
 }
 
+/* ---------------------- */
+/* Main                   */
+/* ---------------------- */
 main {
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-     margin: 100px auto 0 auto; /* centrage horizontal */
-     width: 500px;
+    margin: 100px auto 0 auto;
+    width: 100%;
+    max-width: 600px;
+    padding: 0 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-main .barre{
+main .barre {
     display: flex;
-    gap: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
     font-weight: bold;
     font-size: 15px;
-    padding: 15px 15px;
+    padding: 15px;
     width: 100%;
-    border: 1px solid rgba(255, 255, 255, 0.1);
     justify-content: space-around;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.barre p{
+.barre p {
     color: #b7b7b7;
 }
 
+/* ---------------------- */
+/* Timer / Titre          */
+/* ---------------------- */
 .timer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 h1 {
-    font-size: 100px;
+    font-size: clamp(40px, 10vw, 100px);
     font-weight: bold;
 }
 
 .pr {
     font-weight: bold;
-    font-size: 20px;
+    font-size: clamp(16px, 3vw, 20px);
 }
 
+/* ---------------------- */
+/* Boutons                */
+/* ---------------------- */
 .btw-de {
     margin-top: 60px;
     display: flex;
@@ -89,56 +104,114 @@ h1 {
     border: 1px solid rgba(255, 255, 255, 0.1);
     width: 100%;
     padding: 15px;
+}
 
+.white button,
+.black button {
+    border: none;
+    height: 50px;
+     width: 90%; /* occupe presque toute la largeur du conteneur */
+  max-width: 500px; /* ne dépasse pas trop */
+  min-width: 250px; /* évite d'être trop petit sur mobile */
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .white button {
-    border: none;
     background-color: #ffffff;
     opacity: 90%;
     color: black;
-    height: 50px;
-    width: 470px;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
 }
+
 .black button {
-    border: none;
-    border-style: dashed;
+    border: 1px dashed rgba(255,255,255,0.3);
     color: #b7b7b7;
-    height: 50px;
-    width: 470px;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
+    background: transparent;
 }
 
-
-#clr {
-    color: #ffffff;
-}
-
+/* ---------------------- */
+/* Track section           */
+/* ---------------------- */
 .track {
     display: flex;
     justify-content: space-around;
-    gap: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
     align-items: center;
     text-align: center;
-    border: 1px solid rgba(255,255,255,0.1) ;
-    width: 500px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
     margin-top: 50px;
     text-transform: uppercase;  
 }
 
-footer{
-    
+/* ---------------------- */
+/* Footer                 */
+/* ---------------------- */
+footer {
     padding: 20px;
     text-align: center;
     font-size: 14px;
     color: #b7b7b7;
-    border-top: 1px solid rgba(255,255,255,0.1) ;
+    border-top: 1px solid rgba(255,255,255,0.1);
     margin-top: 50px;
+}
+
+/* ---------------------- */
+/* Responsive Design 📱   */
+/* ---------------------- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    nav {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    main {
+        margin-top: 120px;
+    }
+
+    .track {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btw-de {
+        width: 100%;
+    }
+
+    .white button,
+    .black button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header .titre {
+        font-size: 22px;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    .pr {
+        font-size: 16px;
+    }
+
+    .barre {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
 }
